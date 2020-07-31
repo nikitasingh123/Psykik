@@ -5,6 +5,6 @@
 #### It also provides feature to book appointments with a doctor of your choice at a particluar time slot. Once, the doctor confirms the appointment, it appears on the dashboard of user. Moreover, the current prescription of the user is also displayed on a separate tab.
 #### It provides useful resources such as health tips to combat mental disorders, precautions to be taken and motivational video links based on the medical history and psychological disorder of the person.
 
-*This app has been deployed using Microsoft Azure.
+# *This app has been deployed using Microsoft Azure.*
 
 The video link of working of this app can be found here - [videolink](https://www.youtube.com/watch?v=agLYSMw_VCI&feature=youtu.be)
