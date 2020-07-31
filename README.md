@@ -9,9 +9,11 @@
 
 
 
-##### *This app has been deployed using Microsoft Azure.*
+
 
 The video link of working of this app can be found here - [videolink](https://www.youtube.com/watch?v=agLYSMw_VCI&feature=youtu.be)
+
+##### *This app has been deployed using Microsoft Azure.*
 
 #### Team Members:
 Ananya Goswami, Arshdeep Kainth, Nikita Singh, Sabara Parshad Rajeshbhai, Mohit Chauhan
