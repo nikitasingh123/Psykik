@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #ff0066;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#PERSONAL INFORMATION {background-color: red;}
+#MEDICAL HISTORY {background-color: green;}
+#CURRENT PRESCRIPTION {background-color: blue;}
+
+</style>
+</head>
+<body>
+
+<div id="PERSONAL INFORMATION"><button class="tablink" onclick="openpage1();" id="defaultOpen"> PERSONAL INFORMATION</button></div>
+<div id="MEDICAL HISTORY"><button class="tablink" onclick="openpage2();" >MEDICAL HISTORY</button></div>
+<div id="CURRENT PRESCRIPTION"><button class="tablink" onclick="openpage3();"> CURRENT PRESCRIPTION</button></div>
+<br><br><br>
+<p id="demo"></p>
+<script>
+
+function openpage1()
+{var str = "This is your personal information";
+    var result = str.link("file:///C:/Users/hp/Desktop/curr-presc.html");
+    document.getElementById("demo").innerHTML = result;
+}
+
+function openpage2()
+{var str = "This is your medical history";
+    var result = str.link("file:///C:/Users/hp/Desktop/medhis.html");
+    document.getElementById("demo").innerHTML = result;
+}
+
+function openpage3()
+{var str = "This is your current prescription";
+    var result = str.link("file:///C:/Users/hp/Desktop/curr-presc.html");
+    document.getElementById("demo").innerHTML = result;
+}  
+
+</script>
+</body>
+</html> 
