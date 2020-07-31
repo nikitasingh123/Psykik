@@ -1,0 +1,267 @@
+<html>
+<style>
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 0px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+</style>
+<head> <title> Form </title>
+<link rel="stylesheet" type="text/css" href="..\css\core.css"></head>
+<script>
+var arr=['d1','d2','d3','d5','d14','d10','d9','d11','d12','d13','d14','d15','d16','d17','d18'];
+function forward(id)
+{
+	var hm;
+	for(var i=0;i<15;i++)
+	{	//alert(arr[i]);
+		//alert(arr2[i]);
+		if(id==arr[i])
+		hm=i;
+	}
+	var obj=document.getElementById(arr[hm]);
+	//obj.style.visibility="hidden";
+	obj.className="close";
+	//alert(obj.value);
+	var obj=document.getElementById(arr[hm+1]);
+	//obj.style.visibility="visible";
+	obj.className="open";
+}
+function backward(id)
+{
+	var hm;
+	for(var i=0;i<15;i++)
+	{	//alert(arr[i]);
+		//alert(arr2[i]);
+		if(id==arr[i])
+		hm=i;
+	}
+	var obj=document.getElementById(arr[hm]);
+	//obj.style.visibility="hidden";
+	obj.className="close";
+	//alert(obj.value);
+	var obj=document.getElementById(arr[hm-1]);
+	//obj.style.visibility="visible";
+	obj.className="open";
+}
+</script>
+<link rel="stylesheet" href="core.css">
+<body>
+<center>
+
+<form  name="f1" method="post" action="ques.php">
+<div id="d1" class="open">
+<p> Please input your gender </p><br>
+
+<label class="container">
+<input type="radio" checked="checked" name="gender" value="male">Male<br>
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">
+<input type="radio" name="gender" value="female"> Female<br>
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">
+  <input type="radio" name="gender" value="other"> Other  <br> <br>
+  <span class="checkmark"></span>
+</label>
+
+  <!--<input type="radio" name="gender" value="male" checked> Male<br> -->
+  <!--<input type="radio" name="gender" value="female"> Female<br>-->
+<!--  <input type="radio" name="gender" value="other"> Other  <br> <br>-->
+  <input type="button"  value="Next" onclick="forward('d1');">
+</div>
+
+
+<div id="d2" class="close">
+<p> What is your origin </p>
+
+<input type="radio" name="origin" value="north" checked>North Indian<br>
+<input type="radio" name="origin" value="south" > South Indian<br>
+<input type="radio" name="origin" value="west" > West Indian<br>
+<input type="radio" name="origin" value="east" >East Indian<br>
+<input type="radio" name="origin" value="nri" > NRI<br>
+ <input type="radio" name="origin" value="out" >Not born in India<br><br>
+<input type="button" value="Previous" onclick="backward('d2');"><input type="button" value="Next" onclick="forward('d2');">
+</div>
+<div id="d3" class="close">
+<p> What is your current relationship status </p>
+
+<input type="radio" name="relation" value="single1" checked> Single, not in a committed relationship<br>
+<input type="radio" name="relation" value="single2"> Single, but in a committed relationship<br>
+<input type="radio" name="relation" value="married"> Married or living together<br>
+<input type="radio" name="relation" value="divorced"> Divorced<br>
+<input type="radio" name="relation" value="widowed"> Widowed<br>
+<input type="radio" name="relation" value="separate"> Separated<br> <br>
+<input type="button" value="Previous" onclick="backward('d3');"><input type="button" value="Next" onclick="forward('d3');">
+</div>
+
+<div id="d5" class="close">
+<p> Which of following best describes your work situation </p>
+
+<input type="radio" name="work" value="full" checked> Full time<br>
+<input type="radio" name="work" value="part"> Part time<br>
+<input type="radio" name="work" value="student"> Student<br>
+<input type="radio" name="work" value="retired"> Retired<br>
+<input type="radio" name="work" value="home"> Stay-at-home<br>
+<input type="radio" name="work" value="no"> Not employed<br><br>
+<input type="button" value="Previous" onclick="backward('d5');"><input type="button" value="Next" onclick="forward('d5');">
+</div>
+<div id="d14" class="close">
+<p> Have you recently lost or gained a lot of weight?</p>
+
+<input type="radio" name="weight" value="no" checked> No <br>
+<input type="radio" name="weight" value="yes"> Yes<br><br>
+<input type="button" value="Previous" onclick="backward('d14');"><input type="button" value="Next" onclick="forward('d14');">
+</div>
+
+<div id="d10" class="close">
+<p> In the past month, How much were you bothered by trouble falling or staying asleep </p>
+
+<input type="radio" name="sleep" value="no" checked> Not at all <br>
+<input type="radio" name="sleep" value="moderately"> Moderately <br>
+<input type="radio" name="sleep" value="extremely"> Extremely <br><br>
+<input type="button" value="Previous" onclick="backward('d10');"><input type="button" value="Next" onclick="forward('d10');">
+</div>
+<div id="d9" class="close">
+<p> Have you recently suffered a major trauma,accident,change?</p>
+
+<input type="radio" name="trauma" value="no" checked> No <br>
+<input type="radio" name="trauma" value="yes"> Yes<br><br>
+<input type="button" value="Previous" onclick="backward('d9');"><input type="button" value="Next" onclick="forward('d9');">
+</div>
+<div id="d11" class="close">
+<p> Over the past 15 days, How often have you been bothered by feeling nervous, anxious, frightened, worried, or on edge </p>
+
+<input type="radio" name="nervous" value="no" checked> Not at all <br>
+<input type="radio" name="nervous" value="sometimes"> Several days <br>
+<input type="radio" name="nervous" value="often"> More than half days <br>
+<input type="radio" name="nervous" value="everyday"> Nearly every day <br><br>
+<input type="button" value="Previous" onclick="backward('d11');"><input type="button" value="Next" onclick="forward('d11');">
+</div>
+<div id="d12" class="close">
+<p> Do you feel better about yourself after eating?</p>
+
+<input type="radio" name="eat" value="no" checked> No <br>
+<input type="radio" name="eat" value="yes"> Yes<br><br>
+<input type="button" value="Previous" onclick="backward('d12');"><input type="button" value="Next" onclick="forward('d12');">
+</div>
+
+<div id="d13" class="close">
+<p> Over the past 15 days, How often have you been feeling down, depressed or hopeless </p>
+
+<input type="radio" name="depress" value="no" checked> Not at all <br>
+<input type="radio" name="depress" value="sometimes"> Several days <br>
+<input type="radio" name="depress" value="often"> More than half days <br>
+<input type="radio" name="depress" value="everyday"> Nearly every day <br><br>
+<input type="button" value="Previous" onclick="backward('d13');"><input type="button" value="Next" onclick="forward('d13');">
+</div>
+<div id="d14" class="close">
+<p> Do you ever experience repetitive thoughts that cause you anxiety? </p>
+
+<input type="radio" name="rep" value="no" checked> Not at all <br>
+<input type="radio" name="rep" value="sometimes"> Several days <br>
+<input type="radio" name="rep" value="often"> More than half days <br>
+<input type="radio" name="rep" value="everyday"> Nearly every day <br><br>
+<input type="button" value="Previous" onclick="backward('d14');"><input type="button" value="Next" onclick="forward('d14');">
+</div>
+<div id="d15" class="close">
+<p>Do you spend at least one hour a day thinking obsessive thoughts or performing ritual behaviors? </p>
+
+<input type="radio" name="ritual" value="no" checked> Not at all <br>
+<input type="radio" name="ritual" value="sometimes"> Several days <br>
+<input type="radio" name="ritual" value="often"> More than half days <br>
+<input type="radio" name="ritual" value="everyday"> Nearly every day <br><br>
+<input type="button" value="Previous" onclick="backward('d15');"><input type="button" value="Next" onclick="forward('d15');">
+</div>
+<div id="d16" class="close">
+<p>Do you experience intrusive thoughts that are aggressive or about taboo topics?</p>
+
+<input type="radio" name="taboo" value="no" checked> Not at all <br>
+<input type="radio" name="taboo" value="sometimes"> Several days <br>
+<input type="radio" name="taboo" value="often"> More than half days <br>
+<input type="radio" name="taboo" value="everyday"> Nearly every day <br><br>
+<input type="button" value="Previous" onclick="backward('d16');"><input type="button" value="Next" onclick="forward('d16');">
+</div>
+<div id="d17" class="close">
+<p> Over the past 15 days, How often were you bothered by poor appetite or overeating </p>
+
+<input type="radio" name="appetite" value="no" checked> Not at all <br>
+<input type="radio" name="appetite" value="sometimes"> Several days <br>
+<input type="radio" name="appetite" value="often"> More than half days <br>
+<input type="radio" name="appetite" value="everyday"> Nearly every day <br><br>
+<input type="button" value="Previous" onclick="backward('d17');"><input type="button" value="Next" onclick="forward('d17');">
+</div>
+<div id="d18" class="close">
+<p> Do you have repetitive thoughts or rituals which give you relief upon completion? </p>
+
+<input type="radio" name="ocd" value="no" checked> Not at all <br>
+<input type="radio" name="ocd" value="yes"> Nearly every day <br><br>
+<input type="button" value="Previous" onclick="backward('d18');">
+<input type="submit">
+</div>
+</form>
+</center>
+
+</body>
+</html>
