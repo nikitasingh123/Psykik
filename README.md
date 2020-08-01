@@ -17,6 +17,11 @@ The video link of working of this app can be found here - [videolink](https://ww
 ##### *This app has been deployed using Microsoft Azure.*
 
 ### Authors
-<ul>
-<li> **Nikita Singh** - [nikitasingh123](https://github.com/nikitasingh123) </li>
+
+* **Nikita Singh** - [nikitasingh123](https://github.com/nikitasingh123) 
+* **Other Contributors** to this project - *Ananya Goswami, Arshdeep Kainth, Sabara Parshad Rajeshbhai, Mohit Chauhan*
+
+### License
+
+This project is licensed under the **Apache 2.0 License** - see the [LICENSE.txt](LICENSE.txt) file for details.
 
