@@ -18,7 +18,7 @@
 
 ### Deployed Using
 
-*  **[Microsoft Azure Cloud] (https://azure.microsoft.com/en-in/)**
+*  **[Microsoft Azure Cloud](https://azure.microsoft.com/en-in/)**
 
 
 *The video link of working of this app can be found here - [videolink](https://www.youtube.com/watch?v=agLYSMw_VCI&feature=youtu.be)*
